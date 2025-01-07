@@ -1,8 +1,7 @@
 import Layout from '../components/Layout';
 import BlogPost from '../components/BlogPost';
-import {page} from "../type"
 
-const blogPosts :page[] = [
+const blogPosts = [
   { id: '1', title: 'Introduction to Next.js: An Overview', content: 'Learn the basics of Next.js and start building awesome React applications.', category: 'Nextjs', imageUrl: '/images/nex.jpg', date: 'Dec 20, 2024' },
   { id: '2', title: 'Mastering Tailwind CSS', content: 'Dive deep into Tailwind CSS and create beautiful, responsive designs with ease.', category: 'Tailwind', imageUrl: '/images/tai.jpg', date: 'Dec 25, 2024' },
   { id: '3', title: 'The Power of TypeScript', content: 'Discover how TypeScript can improve your JavaScript development experience.', category: 'Typescript', imageUrl: '/images/typescript.jpg', date: 'Dec 26, 2024' },
