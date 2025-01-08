@@ -20,7 +20,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/blogpage">Blog</NavLink>
+            <NavLink href="/blogpost">Blog</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
             <ThemeSwitcher />

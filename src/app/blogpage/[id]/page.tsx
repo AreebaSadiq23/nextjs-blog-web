@@ -2,11 +2,10 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import Comments from "../../components/Comments";
-import { page } from "../../type"
 
 
 
-const blogPosts :page[]  = [
+const blogPosts  = [
    {
     id: "1",
     title: "Introduction to Next.js: An Overview",
@@ -63,23 +62,17 @@ const blogPosts :page[]  = [
   },
 ];
 
-export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    id: post.id,
-  }));
-}
-
 interface BlogPostProps {
-  params: {
-    id: string;
-  };
+  params: { id: string };
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
-  const post = blogPosts.find((p) => p.id === params.id);
+const blogPost = ({ params }: BlogPostProps) => {
+  const { id } = params; // Extract ID from props
+  const blogPost = blogPosts.find((post) => post.id === id); // Find the matching blog post
 
-  if (!post) {
-    notFound();
+  if (!blogPost) {
+    // If no blog post matches, show a 404
+    return notFound();
   }
 
 
@@ -87,22 +80,23 @@ export default function BlogPost({ params }: BlogPostProps) {
     <Layout>
       <article className="max-w-3xl mx-auto">
         <Image
-          src={post.imageUrl}
-          alt={post.title}
+          src={blogPost.imageUrl}
+          alt={blogPost.title}
           width={800}
           height={400}
           className="w-full h-64 object-cover shadow-md mb-8"
         />
         <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-          {post.title}
+          {blogPost.title}
         </h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-8">{post.date}</p>
-        <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{post.category}</p>
+        <p className="text-gray-500 dark:text-gray-400 mb-8">{blogPost.date}</p>
+        <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{blogPost.category}</p>
         <div className="prose lg:prose-xl dark:prose-invert leading-relaxed">
-          <p>{post.content}</p>
+          <p>{blogPost.content}</p>
         </div>
         <Comments postId={params.id} />
       </article>
     </Layout>
   );
 }
+export default blogPost

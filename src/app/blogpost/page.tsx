@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../components/Layout";
 
-interface BlogPostProps {
+interface BlogPost {
   id: string;
   title: string;
   content: string;
@@ -11,14 +11,15 @@ interface BlogPostProps {
   category: string;
 }
 
-const BlogPost = ({
+// BlogPostCard Component
+const BlogPostCard: React.FC<BlogPost> = ({
   id,
   title,
   content,
   imageUrl,
   date,
   category,
-}: BlogPostProps) => {
+}) => {
   return (
     <div className="bg-white dark:bg-gray-800 shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
       <Image
@@ -32,7 +33,7 @@ const BlogPost = ({
         <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
           {title}
         </h2>
-        <p className="text-gray-600 dark:text-white mb-4">{content}</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">{content}</p>
         <div className="flex justify-between items-center mt-4">
           <p className="text-sm text-gray-500">{date}</p>
           <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
@@ -40,7 +41,7 @@ const BlogPost = ({
           </p>
           <Link
             href={`/blogpage/${id}`}
-            className="text-indigo-600 dark:text-slate-500 hover:underline"
+            className="text-indigo-600 dark:text-indigo-400 hover:underline"
           >
             Read More
           </Link>
@@ -50,7 +51,7 @@ const BlogPost = ({
   );
 };
 
-const blogPosts = [
+const blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "Introduction to Next.js: An Overview",
@@ -107,7 +108,7 @@ const blogPosts = [
   },
 ];
 
-const Blog = () => {
+const Blog: React.FC = () => {
   return (
     <Layout>
       {/* Banner Section */}
@@ -121,17 +122,17 @@ const Blog = () => {
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
           Blog Posts
         </h1>
-        <p className="text-xl text-zinc-700 dark:text-gray-400 font-semibold">
+        <p className="text-xl text-gray-700 dark:text-gray-400 font-semibold">
           Explore our latest articles and insights
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post) => (
-          <div className="max-w-xs mx-auto" key={post.id}>
-            <BlogPost {...post} />
-          </div>
-        ))}
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post) => (
+            <BlogPostCard key={post.id} {...post} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
