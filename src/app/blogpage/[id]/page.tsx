@@ -62,11 +62,12 @@ const blogPosts  = [
   },
 ];  
 
+
 type PageProps = {
   params: { id: string };
 };
 
-type BlogPostProps = PageProps & {
+type BlogPostProps = {
   params: {
     id: string;
     title: string;
