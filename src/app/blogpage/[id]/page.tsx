@@ -66,12 +66,13 @@ type PageProps = {
   params: { id: string };
 }
 
+interface BlogPostProps extends PageProps {}
 
-const BlogPost = ({ params }: PageProps) => {
+const blogPost = ({ params }: BlogPostProps) => {
   const { id } = params; 
-  const foundBlogPost = blogPosts.find((post) => post.id === id);
+  const blogPost = blogPosts.find((post) => post.id === id);
 
-  if (!BlogPost) {
+  if (!blogPost) {
     return notFound();
   }
 
@@ -79,23 +80,23 @@ const BlogPost = ({ params }: PageProps) => {
     <Layout>
       <article className="max-w-3xl mx-auto">
         <Image
-          src={foundBlogPost.imageUrl}
-          alt={foundBlogPost.title}
+          src={blogPost.imageUrl}
+          alt={blogPost.title}
           width={800}
           height={400}
           className="w-full h-64 object-cover shadow-md mb-8"
         />
         <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-          {foundBlogPost.title}
+          {blogPost.title}
         </h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-8">{foundBlogPost.date}</p>
-        <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{foundBlogPost.category}</p>
+        <p className="text-gray-500 dark:text-gray-400 mb-8">{blogPost.date}</p>
+        <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{blogPost.category}</p>
         <div className="prose lg:prose-xl dark:prose-invert leading-relaxed">
-          <p>{foundBlogPost.content}</p>
+          <p>{blogPost.content}</p>
         </div>
         <Comments postId={params.id} />
       </article>
     </Layout>
   );
 }
-export default BlogPost;
+export default blogPost;
