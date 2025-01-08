@@ -65,10 +65,10 @@ const blogPosts  = [
 
 type PageProps = {
   params: { id: string };
-};
+}
 
-type BlogPostProps = {
-  params: {
+interface BlogPostProps extends PageProps {
+  params: { 
     id: string;
     title: string;
     content: string;
@@ -76,7 +76,7 @@ type BlogPostProps = {
     date: string;
     category: string;
   };
-};
+}
 
 const blogPost = ({ params }: BlogPostProps) => {
   const { id } = params;
