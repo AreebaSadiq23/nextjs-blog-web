@@ -11,7 +11,7 @@ interface BlogPost {
   category: string;
 }
 
-// BlogPostCard Component
+
 const BlogPostCard: React.FC<BlogPost> = ({
   id,
   title,

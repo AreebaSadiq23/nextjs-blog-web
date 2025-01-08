@@ -62,21 +62,23 @@ const blogPosts  = [
   },
 ];  
 
-type BlogPostProps = {
-  params: { 
-    id: string,
+type PageProps = {
+  params: { id: string };
+};
+
+type BlogPostProps = PageProps & {
+  params: {
+    id: string;
     title: string;
-   content: string;
-   imageUrl: string;
-   date: string;
-  category: string
-
+    content: string;
+    imageUrl: string;
+    date: string;
+    category: string;
   };
-}
-
+};
 
 const blogPost = ({ params }: BlogPostProps) => {
-  const { id } = params; 
+  const { id } = params;
   const blogPost = blogPosts.find((post) => post.id === id);
 
   if (!blogPost) {
@@ -105,5 +107,6 @@ const blogPost = ({ params }: BlogPostProps) => {
       </article>
     </Layout>
   );
-}
+};
+
 export default blogPost;
