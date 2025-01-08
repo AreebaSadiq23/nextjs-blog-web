@@ -93,7 +93,7 @@ export default function Home() {
           </p>
           <div className="mt-8 flex gap-6">
             <Link
-              href="/blogpage"
+              href="/blogpost"
               className="flex justify-center gap-2 items-center mx-auto shadow-xl text-black text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-gray-800 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
             >
               Explore
@@ -210,7 +210,7 @@ export default function Home() {
         </div>
         <div className="mt-12 text-center">
           <Link
-            href="/blogpage"
+            href="/blogpost"
             className="inline-flex items-center px-6 py-3 border border-black text-base font-medium hover:bg-black hover:text-white text-black dark:text-white bg-transparent rounded-full shadow-sm  dark:hover:bg-black"
           >
             View All Posts
