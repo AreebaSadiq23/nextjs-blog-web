@@ -60,21 +60,21 @@ const blogPosts  = [
     category:"Web Design",
     date: "Dec 30, 2024",
   },
-];
+];  
 
-interface BlogPostProps {
+type PageProps = {
   params: { id: string };
 }
 
+interface BlogPostProps extends PageProps {}
+
 const blogPost = ({ params }: BlogPostProps) => {
-  const { id } = params; // Extract ID from props
-  const blogPost = blogPosts.find((post) => post.id === id); // Find the matching blog post
+  const { id } = params; 
+  const blogPost = blogPosts.find((post) => post.id === id);
 
   if (!blogPost) {
-    // If no blog post matches, show a 404
     return notFound();
   }
-
 
   return (
     <Layout>
@@ -99,4 +99,4 @@ const blogPost = ({ params }: BlogPostProps) => {
     </Layout>
   );
 }
-export default blogPost
+export default blogPost;
