@@ -1,6 +1,6 @@
-import Layout from "../../components/Layout";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Layout from "../../components/Layout";
 import Comments from "../../components/Comments";
 import { page } from "../../type"
 
@@ -64,15 +64,24 @@ const blogPosts :page[]  = [
 ];
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ id: post.id }));
+  return blogPosts.map((post) => ({
+    id: post.id,
+  }));
 }
 
-export default function BlogPost({ params }: { params: { id: string } }) {
+interface BlogPostProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function BlogPost({ params }: BlogPostProps) {
   const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) {
     notFound();
   }
+
 
   return (
     <Layout>
