@@ -63,11 +63,7 @@ const blogPosts  = [
 ];  
 
 
-type PageProps = {
-  params: { id: string };
-}
-
-interface BlogPostProps extends PageProps {
+interface BlogPostProps {
   params: { 
     id: string;
     title: string;
