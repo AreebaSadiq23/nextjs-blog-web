@@ -63,11 +63,15 @@ const blogPosts :page[]  = [
   },
 ];
 
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({ id: post.id }));
+}
+
 export default function BlogPost({ params }: { params: { id: string } }) {
-  const post = blogPosts.find((p) => p.id === params.id)
+  const post = blogPosts.find((p) => p.id === params.id);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
