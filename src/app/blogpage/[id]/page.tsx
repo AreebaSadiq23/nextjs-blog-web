@@ -70,17 +70,6 @@ export async function generateStaticParams() {
     category: post.category,
   }));
 }
-type PageProps = {
-  params: {
-    id: string;
-    title: string;
-    content: string;
-    imageUrl: string;
-    date: string;
-    category: string;
-  };
-};
-
 const blogPost = async ({ params }: { params: {
   id: string;
   title: string;
