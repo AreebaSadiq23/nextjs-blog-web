@@ -71,9 +71,7 @@ type PageProps = {
   };
 };
 
-interface BlogPost extends PageProps {}
-
-const blogPost = ({ params }: BlogPost) => {
+const blogPost = ({ params }: PageProps) => {
   const { id } = params;
   const blogPost = blogPosts.find((post) => post.id === id);
 
