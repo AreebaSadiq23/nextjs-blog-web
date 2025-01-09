@@ -80,9 +80,17 @@ type PageProps = {
     category: string;
   };
 };
-const blogPost = ({ params }: PageProps) => {
+
+const blogPost = async ({ params }: { params: {
+  id: string;
+  title: string;
+  content: string;
+  imageUrl: string;
+  date: string;
+  category: string;
+}}) => {
   const { id } = params;
-  const blogPost = blogPosts.find((post) => post.id === id);
+  const blogPost = await blogPosts.find((post) => post.id === id);
 
   if (!blogPost) {
     return notFound();
