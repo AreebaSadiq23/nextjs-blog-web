@@ -5,7 +5,7 @@ export default function Contact() {
     <Layout>
       {/* Banner Image */}
       <div
-        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center"
+        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center "
         style={{ backgroundImage: "url(/images/contact.jpg)" }}
       ></div>
 

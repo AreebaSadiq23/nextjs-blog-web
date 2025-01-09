@@ -7,7 +7,7 @@ const About: React.FC = () => {
     <Layout>
       {/* Banner Image */}
       <div
-        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center"
+        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center max-w-screen-2xl mx-auto"
         style={{ backgroundImage: "url(/images/about.jpeg)" }}
       ></div>
 
