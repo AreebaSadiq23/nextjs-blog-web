@@ -47,7 +47,7 @@ export default function Navbar() {
             <NavLink href="/" mobile>
               Home
             </NavLink>
-            <NavLink href="/blog" mobile>
+            <NavLink href="/blogpost" mobile>
               Blog
             </NavLink>
             <NavLink href="/about" mobile>
