@@ -60,6 +60,16 @@ const blogPosts = [
   },
 ];
 
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    id: post.id,
+    title: post.title,
+    content: post.content,
+    imageUrl: post.imageUrl,
+    date: post.date,
+    category: post.category,
+  }));
+}
 type PageProps = {
   params: {
     id: string;
@@ -70,7 +80,6 @@ type PageProps = {
     category: string;
   };
 };
-
 const blogPost = ({ params }: PageProps) => {
   const { id } = params;
   const blogPost = blogPosts.find((post) => post.id === id);
