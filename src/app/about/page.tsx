@@ -19,7 +19,7 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           {/* Image Section */}
           <Image
-            src="/images/about.jpg"
+            src="/images/about2.jpeg"
             alt="Team"
             width={300}
             height={300}

@@ -21,7 +21,7 @@ const BlogPostCard: React.FC<BlogPost> = ({
   category,
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+    <div className="bg-white dark:bg-gray-800 shadow-md overflow-hidden w-[300] transition-transform duration-300 hover:scale-105">
       <Image
         src={imageUrl}
         alt={title}
@@ -33,12 +33,13 @@ const BlogPostCard: React.FC<BlogPost> = ({
         <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
           {title}
         </h2>
+        <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+            {category}
+          </p>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{content}</p>
         <div className="flex justify-between items-center mt-4">
           <p className="text-sm text-gray-500">{date}</p>
-          <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
-            {category}
-          </p>
+          
           <Link
             href={`/blogpage/${id}`}
             className="text-indigo-600 dark:text-indigo-400 hover:underline"

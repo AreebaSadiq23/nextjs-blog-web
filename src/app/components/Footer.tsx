@@ -59,7 +59,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="mt-8 text-center text-base text-gray-400 dark:text-white">
-          &copy; 2024 TechInsight Blog. All rights reserved.
+          &copy; 2025 TechInsight Blog. All rights reserved.
         </p>
       </div>
     </footer>
