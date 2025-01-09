@@ -70,15 +70,16 @@ export async function generateStaticParams() {
     category: post.category,
   }));
 }
-const blogPost = async ({ params }: { params: {
+const blogPost = async ({ params }: { params: Promise<{
   id: string;
   title: string;
   content: string;
   imageUrl: string;
   date: string;
   category: string;
-}}) => {
-  const { id } = params;
+}> }) => {
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
   const blogPost = await blogPosts.find((post) => post.id === id);
 
   if (!blogPost) {
@@ -105,7 +106,7 @@ const blogPost = async ({ params }: { params: {
         <div className="prose lg:prose-xl dark:prose-invert leading-relaxed">
           <p>{blogPost.content}</p>
         </div>
-        <Comments postId={params.id} />
+        <Comments postId={resolvedParams.id} />
       </article>
     </Layout>
   );
