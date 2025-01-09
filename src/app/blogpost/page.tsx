@@ -114,7 +114,7 @@ const Blog: React.FC = () => {
     <Layout>
       {/* Banner Section */}
       <div
-        className="relative w-full h-[400px] bg-cover bg-center"
+        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center"
         style={{ backgroundImage: "url(/images/blog.jpeg)" }}
       ></div>
 
