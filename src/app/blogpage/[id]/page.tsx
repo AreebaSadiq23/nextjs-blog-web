@@ -71,16 +71,7 @@ type PageProps = {
   };
 };
 
-interface BlogPost extends PageProps {
-  params: {
-    id: string;
-    title: string;
-    content: string;
-    imageUrl: string;
-    date: string;
-    category: string;
-  };
-}
+interface BlogPost extends PageProps {}
 
 const blogPost = ({ params }: BlogPost) => {
   const { id } = params;
