@@ -11,7 +11,6 @@ interface BlogPost {
   category: string;
 }
 
-
 const BlogPostCard: React.FC<BlogPost> = ({
   id,
   title,
@@ -34,12 +33,12 @@ const BlogPostCard: React.FC<BlogPost> = ({
           {title}
         </h2>
         <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
-            {category}
-          </p>
+          {category}
+        </p>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{content}</p>
         <div className="flex justify-between items-center mt-4">
           <p className="text-sm text-gray-500">{date}</p>
-          
+
           <Link
             href={`/blogpage/${id}`}
             className="text-indigo-600 dark:text-indigo-400 hover:underline"
@@ -113,10 +112,29 @@ const Blog: React.FC = () => {
   return (
     <Layout>
       {/* Banner Section */}
-      <div
-        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/blog.jpeg)" }}
-      ></div>
+      <div className="relative text-black">
+        <Image
+          src="/images/banner.jpg"
+          alt="Contact Banner"
+          height={800}
+          width={1600}
+          className="w-full h-full md:h-[400px] object-cover"
+        />
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl md:text-5xl font-semibold text-fuchsia-900">
+          Blog
+        </h1>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-14">
+          <p className="text-gray-600 text-xs md:text-xl flex items-center">
+            <Link href="/" className="font-bold hover:underline">
+              Home
+            </Link>
+            <span className="font-bold mx-2">{">"}</span>
+            <Link href="/" className=" hover:underline">
+              Blog
+            </Link>
+          </p>
+        </div>
+      </div>
 
       {/* Blog Posts Section */}
       <div className="text-center mb-12 mt-12">

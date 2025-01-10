@@ -1,15 +1,35 @@
 import React from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
+import Link from "next/link";
 
 const About: React.FC = () => {
   return (
     <Layout>
       {/* Banner Image */}
-      <div
-        className="relative w-full h-[400px] sm:h-[300px] xs:h-[200px] bg-cover bg-center max-w-screen-2xl mx-auto"
-        style={{ backgroundImage: "url(/images/about.jpeg)" }}
-      ></div>
+      <div className="relative text-black">
+        <Image
+          src="/images/banner.jpg"
+          alt="Contact Banner"
+          height={800}
+          width={1600}
+          className="w-full h-full md:h-[400px] object-cover"
+        />
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl md:text-5xl font-semibold text-fuchsia-900">
+          About us
+        </h1>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-14">
+          <p className="text-gray-600 text-xs md:text-xl flex items-center">
+            <Link href="/" className="font-bold hover:underline">
+              Home
+            </Link>
+            <span className="font-bold mx-2">{">"}</span>
+            <Link href="/" className=" hover:underline">
+              About
+            </Link>
+          </p>
+        </div>
+      </div>
 
       {/* Content Section */}
       <div className="max-w-4xl mx-auto">
