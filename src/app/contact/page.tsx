@@ -36,8 +36,7 @@ export default function Contact() {
           Get in Touch
         </h1>
         <p className="text-gray-600 text-center max-w-md mx-auto mb-4 dark:text-gray-400">
-          Feel free to reach out to us for any inquiries or support. We're here
-          to help!
+        Feel free to reach out to us for any inquiries or support. We&apos;re here to help!
         </p>
         {/* Contact Form */}
         <div className="p-10 sm:p-6 xs:p-4 shadow-lg border border-gray-300 dark:border-gray-700 mb-12">
