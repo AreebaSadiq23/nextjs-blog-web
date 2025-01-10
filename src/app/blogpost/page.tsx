@@ -124,7 +124,7 @@ const Blog: React.FC = () => {
           Blog
         </h1>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-14">
-          <p className="text-gray-600 text-xs md:text-xl flex items-center">
+          <p className="text-gray-800 text-xs md:text-xl flex items-center">
             <Link href="/" className="font-bold hover:underline">
               Home
             </Link>

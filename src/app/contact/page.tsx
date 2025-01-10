@@ -15,10 +15,10 @@ export default function Contact() {
           className="w-full h-full md:h-[400px] object-cover"
         />
         <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl md:text-5xl font-semibold text-fuchsia-900">
-          Contact 
+          Contact
         </h1>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-14">
-          <p className="text-gray-600 text-xs md:text-xl flex items-center">
+          <p className="text-gray-800 text-xs md:text-xl flex items-center">
             <Link href="/" className="font-bold hover:underline">
               Home
             </Link>
@@ -32,10 +32,13 @@ export default function Contact() {
 
       {/* Content Section */}
       <div className="max-w-2xl mx-auto py-16 px-6 sm:px-8 lg:px-10">
-        <h1 className="text-5xl sm:text-4xl xs:text-3xl font-bold text-center text-gray-700 dark:text-gray-400 mb-12">
+        <h1 className="text-5xl sm:text-4xl xs:text-3xl font-bold text-center text-gray-700 dark:text-gray-400 mb-4">
           Get in Touch
         </h1>
-
+        <p className="text-gray-600 text-center max-w-md mx-auto mb-4 dark:text-gray-400">
+          Feel free to reach out to us for any inquiries or support. We're here
+          to help!
+        </p>
         {/* Contact Form */}
         <div className="p-10 sm:p-6 xs:p-4 shadow-lg border border-gray-300 dark:border-gray-700 mb-12">
           <form className="space-y-8">

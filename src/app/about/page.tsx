@@ -15,15 +15,15 @@ const About: React.FC = () => {
           width={1600}
           className="w-full h-full md:h-[400px] object-cover"
         />
-        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl md:text-5xl font-semibold text-fuchsia-900">
-          About us
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl md:text-6xl font-bold text-fuchsia-900">
+          About
         </h1>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-14">
-          <p className="text-gray-600 text-xs md:text-xl flex items-center">
+          <p className="text-gray-800 text-xs md:text-xl flex items-center">
             <Link href="/" className="font-bold hover:underline">
               Home
             </Link>
-            <span className="font-bold mx-2">{">"}</span>
+            <span className="font-semibold mx-2">{">"}</span>
             <Link href="/" className=" hover:underline">
               About
             </Link>
